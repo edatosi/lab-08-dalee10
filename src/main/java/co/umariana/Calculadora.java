@@ -14,18 +14,17 @@ public class Calculadora {
 
     /** @return la suma de a y b */
     public int sumar(int a, int b) {
-        return a+b;
-
+        return a + b;
     }
 
     /** @return a menos b */
     public int restar(int a, int b) {
-        return a-b;
+        return a - b;
     }
 
     /** @return el producto de a y b */
     public int multiplicar(int a, int b) {
-      return a*b;
+      return a * b;
     }
 
     /**
@@ -33,12 +32,14 @@ public class Calculadora {
      * @throws ArithmeticException si b es 0 (mensaje: "No se puede dividir entre cero")
      */
     public double dividir(int a, int b) {
-        return a/b;
+        if (b == 0) {
+            throw new ArithmeticException("No se puede dividir entre cero");
+        }
+        return (double) a / b;
     }
 
     /** @return true si el número es par (el 0 es par; los negativos también pueden serlo) */
     public boolean esPar(int numero) {
         return numero % 2 == 0;
-        
     }
 }
